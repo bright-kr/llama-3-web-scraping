@@ -1,6 +1,6 @@
 # LLaMA 3로 Webスクレイピング하기
 
-[![Bright Data Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/)
+[![Bright Data Promo](https://github.com/bright-kr/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/)
 
 이 가이드는 LLaMA 3를 사용하여 큰 HTML을 구조화되고, 깔끔하며, 활용 가능한 JSON으로 변환하는 방법을 설명합니다:
 
@@ -44,7 +44,7 @@ AI 기반 Webスクレイピング에 대해 더 알아보려면 [이전 가이�
 
 Ollama는 대규모 언어 모델을 로컬에서 설치, 실행, 관리하는 과정을 간소화합니다.
 
-![Ollama installation page](https://github.com/luminati-io/llama-3-web-scraping/blob/main/images/ollama-llm-download-installation-page.png)
+![Ollama installation page](https://github.com/bright-kr/llama-3-web-scraping/blob/main/images/ollama-llm-download-installation-page.png)
 
 시작 방법은 다음과 같습니다:
 
@@ -95,7 +95,7 @@ ollama serve
 
 이제 Amazon에서 제품 상세 정보를 추출하는 스크레이퍼를 만들어 보겠습니다. Amazon은 [동적 콘텐츠](https://brightdata.co.kr/blog/how-tos/scrape-dynamic-websites-python)와 강력한 アンチボット 보호로 인해 가장 까다로운 대상 중 하나입니다.
 
-![Amazon product page](https://github.com/luminati-io/llama-3-web-scraping/blob/main/images/amazon-office-chair-product-page-1.png)
+![Amazon product page](https://github.com/bright-kr/llama-3-web-scraping/blob/main/images/amazon-office-chair-product-page-1.png)
 
 다음 항목을 추출합니다:
 
@@ -118,7 +118,7 @@ LLaMA 기반 스크레이퍼는 다음과 같은 스마트한 다단계 워크�
 
 워크플로의 시각적 구성은 다음과 같습니다:
 
-![Workflow diagram](https://github.com/luminati-io/llama-3-web-scraping/blob/main/images/llama-web-scraping-workflow-diagram.png)
+![Workflow diagram](https://github.com/bright-kr/llama-3-web-scraping/blob/main/images/llama-web-scraping-workflow-diagram.png)
 
 여기서는 **Python**을 사용하지만, [JavaScript](https://brightdata.co.kr/blog/web-data/best-languages-web-scraping) 등 다른 언어로도 적용할 수 있습니다.
 
@@ -187,11 +187,11 @@ Amazon 페이지는 HTML 중첩이 매우 깊어 LLM이 처리하기에 비효�
 
 HTML은 약 **270,000 토큰**을 포함합니다:
 
-![token-calculator-html-tokens](https://github.com/luminati-io/llama-3-web-scraping/blob/main/images/token-calculator-html-tokens.png)
+![token-calculator-html-tokens](https://github.com/bright-kr/llama-3-web-scraping/blob/main/images/token-calculator-html-tokens.png)
 
 Markdown 버전은 **~11,000 토큰**만 포함합니다:
 
-![token-calculator-markdown-tokens](https://github.com/luminati-io/llama-3-web-scraping/blob/main/images/token-calculator-markdown-tokens.png)
+![token-calculator-markdown-tokens](https://github.com/bright-kr/llama-3-web-scraping/blob/main/images/token-calculator-markdown-tokens.png)
 
 이 **96% 감소**는 다음으로 이어집니다:
 
@@ -504,7 +504,7 @@ if __name__ == "__main__":
 
 위의 [web scraping bot](https://brightdata.co.kr/blog/how-tos/what-is-a-scraping-bot)을 실행하면 CAPTCHA 챌린지와 같은 Amazon의 アンチボット 조치를 마주칠 가능성이 큽니다:
 
-![amazon-captcha-anti-bot-challenge](https://github.com/luminati-io/llama-3-web-scraping/blob/main/images/amazon-captcha-anti-bot-challenge.png)
+![amazon-captcha-anti-bot-challenge](https://github.com/bright-kr/llama-3-web-scraping/blob/main/images/amazon-captcha-anti-bot-challenge.png)
 
 LLaMA 3는 파싱을 훌륭하게 수행하지만, 사이트 보호를 우회하는 것은 여전히 까다롭습니다. [Bright Data’s Scraping Browser](https://brightdata.co.kr/products/scraping-browser)는 강력한 해결책을 제공합니다.
 
@@ -529,15 +529,15 @@ Scraping Browser를 시작하려면:
 
 [Bright Data 계정 생성](https://brightdata.co.kr/)을 진행합니다(신규 사용자는 결제 수단 추가 후 $5 크레딧을 받습니다). 그런 다음 대시보드에서 **Proxies & Scraping**으로 이동해 **Get started**를 클릭합니다.
 
-![brightdata-scraping-solutions-dashboard](https://github.com/luminati-io/llama-3-web-scraping/blob/main/images/brightdata-scraping-solutions-dashboard.png)
+![brightdata-scraping-solutions-dashboard](https://github.com/bright-kr/llama-3-web-scraping/blob/main/images/brightdata-scraping-solutions-dashboard.png)
 
 새 zone(예: _test\_browser_)을 생성하고, _Premium domains_ 및 [CAPTCHA solver](https://brightdata.co.kr/products/web-unlocker/captcha-solver) 같은 기능을 활성화합니다.
 
-![brightdata-create-scraping-browser-zone](https://github.com/luminati-io/llama-3-web-scraping/blob/main/images/brightdata-create-scraping-browser-zone.png)
+![brightdata-create-scraping-browser-zone](https://github.com/bright-kr/llama-3-web-scraping/blob/main/images/brightdata-create-scraping-browser-zone.png)
 
 다음으로, 대시보드에서 Selenium URL을 복사합니다.
 
-![brightdata-selenium-connection-credentials](https://github.com/luminati-io/llama-3-web-scraping/blob/main/images/brightdata-selenium-connection-credentials.png)
+![brightdata-selenium-connection-credentials](https://github.com/bright-kr/llama-3-web-scraping/blob/main/images/brightdata-selenium-connection-credentials.png)
 
 ### Modifying Your Code for Scraping Browser
 
@@ -568,9 +568,9 @@ def initialize_web_driver():
 - 멀티 페이지 スクレイピング 및 [pagination handling](https://brightdata.co.kr/blog/web-data/pagination-web-scraping) 지원
 - [other marketplaces](https://brightdata.co.kr/blog/how-tos/ecommerce-web-scraping-guide)로 スクレイピング 확장
 - Google 서비스에서 데이터 추출:
-  - [Google Flights](https://github.com/luminati-io/google-flights-api)
-  - [Google Search](https://github.com/luminati-io/google-search-api)
-  - [Google Trends](https://github.com/luminati-io/google-trends-api)
+  - [Google Flights](https://github.com/bright-kr/google-flights-api)
+  - [Google Search](https://github.com/bright-kr/google-search-api)
+  - [Google Trends](https://github.com/bright-kr/google-trends-api)
 - 다음과 같은 다양한 LLM 통합 탐색:
   - [Gemini](https://brightdata.co.kr/blog/web-data/web-scraping-with-gemini)
   - [Perplexity](https://brightdata.co.kr/blog/web-data/web-scraping-with-perplexity)
