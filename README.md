@@ -1,4 +1,4 @@
-# LLaMA 3로 Webスクレイピング하기
+# LLaMA 3로 Web스크레이핑하기
 
 [![Bright Data Promo](https://github.com/bright-kr/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/)
 
@@ -10,14 +10,14 @@
 - [적절한 LLaMA 모델 선택하기](#selecting-the-right-llama-model)
 - [모델 다운로드 및 실행](#downloading-and-running-the-model)
 - [LLM 기반 Amazon 스크레이퍼 구축](#building-an-amazon-scraper-powered-by-llms)
-- [アンチボット 보호 처리](#handling-anti-bot-protection)
+- [안티봇 보호 처리](#handling-anti-bot-protection)
 - [스크레이퍼 고도화 및 확장](#enhancing-and-expanding-your-scraper)
 
 ## Why Choose LLaMA 3 for Web Scraping
 
 [Meta's LLaMA 3](https://ai.meta.com/blog/meta-llama-3/) (2024년 4월 공개)는 8B부터 405B 파라미터까지 확장되는 오픈 웨이트 LLM 시리즈로, 폭넓은 작업과 하드웨어 구성에 적합합니다. 3.1부터 3.3까지의 업데이트를 통해 기능이 더욱 강화되었습니다.
 
-전통적인 スクレイピング 기법—[XPath 또는 CSS](https://brightdata.co.kr/blog/web-data/xpath-vs-css-selectors)를 사용하는 방식—은 웹사이트 레이아웃 변경에 취약합니다. 그러나 LLaMA 3는 사람처럼 콘텐츠를 이해하므로, 업데이트가 있어도 신뢰성을 유지하는 지능적이고 탄력적인 スクレイピング을 제공합니다.
+전통적인 스크레이핑 기법—[XPath 또는 CSS](https://brightdata.co.kr/blog/web-data/xpath-vs-css-selectors)를 사용하는 방식—은 웹사이트 레이아웃 변경에 취약합니다. 그러나 LLaMA 3는 사람처럼 콘텐츠를 이해하므로, 업데이트가 있어도 신뢰성을 유지하는 지능적이고 탄력적인 스크레이핑을 제공합니다.
 
 따라서 다음과 같은 경우에 이상적입니다:
 
@@ -26,11 +26,11 @@
 - 견고하고 내구성 있는 스크레이퍼
 - 민감한 데이터의 사내 유지 보장
 
-AI 기반 Webスクレイピング에 대해 더 알아보려면 [이전 가이드](https://brightdata.co.kr/blog/web-data/ai-web-scraping)를 참고하시기 바랍니다.
+AI 기반 Web스크레이핑에 대해 더 알아보려면 [이전 가이드](https://brightdata.co.kr/blog/web-data/ai-web-scraping)를 참고하시기 바랍니다.
 
 ## System Requirements
 
-[LLM 기반 スクレイピング](https://brightdata.co.kr/blog/web-data/web-scraping-with-scrapegraphai) 프로젝트를 시작하기 전에 다음을 갖추었는지 확인하시기 바랍니다:
+[LLM 기반 스크레이핑](https://brightdata.co.kr/blog/web-data/web-scraping-with-scrapegraphai) 프로젝트를 시작하기 전에 다음을 갖추었는지 확인하시기 바랍니다:
 
 - [Python 3](https://www.python.org/downloads/)
 - Python에 대한 기본 이해
@@ -93,7 +93,7 @@ ollama serve
 
 ## Building an Amazon Scraper Powered by LLMs
 
-이제 Amazon에서 제품 상세 정보를 추출하는 스크레이퍼를 만들어 보겠습니다. Amazon은 [동적 콘텐츠](https://brightdata.co.kr/blog/how-tos/scrape-dynamic-websites-python)와 강력한 アンチボット 보호로 인해 가장 까다로운 대상 중 하나입니다.
+이제 Amazon에서 제품 상세 정보를 추출하는 스크레이퍼를 만들어 보겠습니다. Amazon은 [동적 콘텐츠](https://brightdata.co.kr/blog/how-tos/scrape-dynamic-websites-python)와 강력한 안티봇 보호로 인해 가장 까다로운 대상 중 하나입니다.
 
 ![Amazon product page](https://github.com/bright-kr/llama-3-web-scraping/blob/main/images/amazon-office-chair-product-page-1.png)
 
@@ -177,7 +177,7 @@ page_html = product_container.get_attribute("outerHTML")
 - JavaScript로 렌더링되는 콘텐츠(가격, 평점 등)를 기다립니다
 - 헤더, 푸터, 사이드바를 무시하고 관련 제품 섹션만 타깃팅합니다
 
-_[Python으로 Amazon 제품 데이터를 スクレイピング하는 방법](https://brightdata.co.kr/blog/how-tos/how-to-scrape-amazon)에 대한 전체 가이드를 확인해 보시기 바랍니다._
+_[Python으로 Amazon 제품 데이터를 스크레이핑하는 방법](https://brightdata.co.kr/blog/how-tos/how-to-scrape-amazon)에 대한 전체 가이드를 확인해 보시기 바랍니다._
 
 ### Step 4 – Convert HTML to Markdown
 
@@ -283,7 +283,7 @@ with open("product_data.json", "w", encoding="utf-8") as f:
 
 ### Step 8: Execute the Script
 
-스크레이퍼를 실행하려면 Amazon 제품 URL을 제공하고 スクレイピング 함수를 호출합니다:
+스크레이퍼를 실행하려면 Amazon 제품 URL을 제공하고 스크레이핑 함수를 호출합니다:
 
 ```python
 if __name__ == "__main__":
@@ -502,7 +502,7 @@ if __name__ == "__main__":
 
 ## Handling Anti-Bot Protection
 
-위의 [web scraping bot](https://brightdata.co.kr/blog/how-tos/what-is-a-scraping-bot)을 실행하면 CAPTCHA 챌린지와 같은 Amazon의 アンチボット 조치를 마주칠 가능성이 큽니다:
+위의 [web scraping bot](https://brightdata.co.kr/blog/how-tos/what-is-a-scraping-bot)을 실행하면 CAPTCHA 챌린지와 같은 Amazon의 안티봇 조치를 마주칠 가능성이 큽니다:
 
 ![amazon-captcha-anti-bot-challenge](https://github.com/bright-kr/llama-3-web-scraping/blob/main/images/amazon-captcha-anti-bot-challenge.png)
 
@@ -510,7 +510,7 @@ LLaMA 3는 파싱을 훌륭하게 수행하지만, 사이트 보호를 우회하
 
 ### Why Use Bright Data Scraping Browser
 
-[Bright Data Scraping Browser](https://brightdata.co.kr/products/scraping-browser)는 최신 Webスクレイピング 프로젝트를 스케일링하기 위해 설계된 헤드리스, 클라우드 기반 브라우저입니다. 내장 プロキシ 인프라와 고급 언블로킹 기능을 제공하며, [Bright Data Unlocker scraping suite](https://docs.brightdata.com/scraping-automation/introduction)의 일부입니다.
+[Bright Data Scraping Browser](https://brightdata.co.kr/products/scraping-browser)는 최신 Web스크레이핑 프로젝트를 스케일링하기 위해 설계된 헤드리스, 클라우드 기반 브라우저입니다. 내장 프록시 인프라와 고급 언블로킹 기능을 제공하며, [Bright Data Unlocker scraping suite](https://docs.brightdata.com/scraping-automation/introduction)의 일부입니다.
 
 선택해야 하는 이유는 다음과 같습니다:
 
@@ -557,7 +557,7 @@ def initialize_web_driver():
     return driver
 ```
 
-이제 스크레이퍼는 Bright Data 인프라를 통해 라우팅되며, Amazon 및 기타 アンチボット 시스템을 손쉽게 처리합니다.
+이제 스크레이퍼는 Bright Data 인프라를 통해 라우팅되며, Amazon 및 기타 안티봇 시스템을 손쉽게 처리합니다.
 
 ## Enhancing and Expanding Your Scraper
 
@@ -565,8 +565,8 @@ def initialize_web_driver():
 
 - URL 및 프롬프트 인자를 구성 가능하게 만들기
 - `.env` 파일에서 자격 증명을 안전하게 로드하기
-- 멀티 페이지 スクレイピング 및 [pagination handling](https://brightdata.co.kr/blog/web-data/pagination-web-scraping) 지원
-- [other marketplaces](https://brightdata.co.kr/blog/how-tos/ecommerce-web-scraping-guide)로 スクレイピング 확장
+- 멀티 페이지 스크레이핑 및 [pagination handling](https://brightdata.co.kr/blog/web-data/pagination-web-scraping) 지원
+- [other marketplaces](https://brightdata.co.kr/blog/how-tos/ecommerce-web-scraping-guide)로 스크레이핑 확장
 - Google 서비스에서 데이터 추출:
   - [Google Flights](https://github.com/bright-kr/google-flights-api)
   - [Google Search](https://github.com/bright-kr/google-search-api)
@@ -580,6 +580,6 @@ def initialize_web_driver():
 
 이 가이드는 LLaMA 3로 신뢰할 수 있고 지능적인 스크레이퍼를 만들 수 있도록 구성되어 있습니다.
 
-최고의 スクレイピング 성과를 위해 LLaMA의 추론 능력과 [Bright Data’s Scraping Browser](https://brightdata.co.kr/products/scraping-browser) 같은 도구의 인프라를 결합하시기 바랍니다.
+최고의 스크레이핑 성과를 위해 LLaMA의 추론 능력과 [Bright Data’s Scraping Browser](https://brightdata.co.kr/products/scraping-browser) 같은 도구의 인프라를 결합하시기 바랍니다.
 
 한 단계 더 성장할 준비가 되셨습니까? 무료로 [Bright Data의 전체 스크레이핑 스위트](https://brightdata.co.kr/)를 사용해 보시기 바랍니다!
